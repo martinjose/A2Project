@@ -18,6 +18,7 @@ import javax.sound.sampled.*;
  * @author
  */
 public class SelfCheckoutSystem {
+    private final int MAX_LANGUAGES = 4;
 
     /**
      * @param args the command line arguments
@@ -28,6 +29,8 @@ public class SelfCheckoutSystem {
         //TODO: Change this so there's a shutdown user ID.
         //while (true) //Leaving out to stop infinite loop issues.
         {
+            //Load language options
+            loadLanguageOptions();
             //Load the LanguageSelectionForm
             LanguageSelectionForm lang = new LanguageSelectionForm();
             lang.setVisible(true);
@@ -93,6 +96,13 @@ public class SelfCheckoutSystem {
         }).start();
     }
 
+    private static void loadLanguageOptions()
+    {
+        String filename = "languageOptions.txt";
+        //TODO load languageOptions.txt stuff.
+    }
+    
     private static int languageNum;
     private static String userID;
+    private static String[] langOptions;
 }
