@@ -31,16 +31,24 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="language1Button" min="-2" pref="240" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="language2Button" min="-2" pref="240" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="language3Button" min="-2" pref="240" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="language4Button" min="-2" pref="240" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="language1Button" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
+                          <Component id="language1Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="language3Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="language4Label" min="-2" max="-2" attributes="0"/>
+                          <Component id="language2Label" min="-2" max="-2" attributes="0"/>
+                          <Component id="language2Button" min="-2" pref="240" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -50,12 +58,22 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="language2Button" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
-                  <Component id="language1Button" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
+                  <Component id="language1Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="language2Label" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="language1Button" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
+                  <Component id="language2Button" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="language3Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="language4Label" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="language4Button" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
                   <Component id="language3Button" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
@@ -66,6 +84,20 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
+    <Component class="javax.swing.JButton" name="language1Button">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Language 1"/>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[240, 88]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[240, 88]"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="language1ButtonActionPerformed"/>
+      </Events>
+    </Component>
     <Component class="javax.swing.JButton" name="language2Button">
       <Properties>
         <Property name="text" type="java.lang.String" value="Language 2"/>
@@ -76,6 +108,9 @@
           <Dimension value="[240, 88]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="language2ButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="language3Button">
       <Properties>
@@ -87,17 +122,9 @@
           <Dimension value="[240, 88]"/>
         </Property>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="language1Button">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Language 1"/>
-        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[240, 88]"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[240, 88]"/>
-        </Property>
-      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="language3ButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="language4Button">
       <Properties>
@@ -108,6 +135,29 @@
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[240, 88]"/>
         </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="language4ButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="language1Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Language 1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="language2Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Language 2"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="language3Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Language 3"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="language4Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Language 4"/>
       </Properties>
     </Component>
   </SubComponents>
