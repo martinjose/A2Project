@@ -31,11 +31,15 @@ public class SelfCheckoutSystem {
         {
             //Load language options
             loadLanguageOptions();
+            Language lang1 = new Language(langOptions[0]);
+            Language lang2 = new Language(langOptions[1]);
+            Language lang3 = new Language(langOptions[2]);
+            Language lang4 = new Language(langOptions[3]);
             //Load the LanguageSelectionForm
             LanguageSelectionForm lang = new LanguageSelectionForm();
-            lang.setVisible(true);
-            lang.updateLang1("Actual Language 1", "ZombieIcon.jpg");
+            lang.updateLang1(lang1.name(), lang1.icon());
             lang.updateLang2("Actual language 2", "PIRATEJOLLYROGER.GIF");
+            lang.setVisible(true);
             //That will choose which set of language text we'll use.
             while (lang.isVisible())
                 sleep(500);
@@ -100,6 +104,23 @@ public class SelfCheckoutSystem {
     {
         String filename = "languageOptions.txt";
         //TODO load languageOptions.txt stuff.
+        String line = null;
+        try
+        {
+            int i = 0;
+            FileReader fileReader = new FileReader(getClass().getResource("/selfcheckoutsystem/configuration/" + filename));
+            BufferedReader themeReader = new BufferedReader(fileReader);
+            while((line = themeReader.readLine()) != null)
+            {
+                langOptions[i] = line;
+                i++;
+            }
+            themeReader.close();
+        }
+        catch (IOException ex )
+        {
+            System.out.println("IOException: " + ex);
+        }
     }
     
     private static int languageNum;
