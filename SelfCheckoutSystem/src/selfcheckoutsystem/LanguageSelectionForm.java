@@ -6,6 +6,8 @@
 package selfcheckoutsystem;
 
 import javax.swing.SwingConstants;
+import java.net.URL;
+import java.io.*;
 
 /**
  *
@@ -190,14 +192,33 @@ public class LanguageSelectionForm extends javax.swing.JFrame {
     public void updateLang1(String text, String filename)
     {
         language1Label.setText(text);
-        language1Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/selfcheckoutsystem/images/" + filename ))); // NOI18N
+        URL fileurl = LanguageSelectionForm.class.getResource("/selfcheckoutsystem/images/" + filename);
+        if( fileurl != null )
+            language1Button.setIcon(new javax.swing.ImageIcon(fileurl)); // NOI18N
     }
     
     public void updateLang2(String text, String filename)
     {
         language2Label.setText(text);
-        language2Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/selfcheckoutsystem/images/" + filename ))); // NOI18N
-        //language2Button.setVerticalTextPosition(SwingConstants.TOP);
+        URL fileurl = LanguageSelectionForm.class.getResource("/selfcheckoutsystem/images/" + filename);
+        if( fileurl != null )
+            language2Button.setIcon(new javax.swing.ImageIcon(fileurl)); // NOI18N
+    }
+
+    public void updateLang3(String text, String filename)
+    {
+        language3Label.setText(text);
+        URL fileurl = LanguageSelectionForm.class.getResource("/selfcheckoutsystem/images/" + filename);
+        if( fileurl != null )
+            language3Button.setIcon(new javax.swing.ImageIcon(fileurl)); // NOI18N
+    }
+
+    public void updateLang4(String text, String filename)
+    {
+        language4Label.setText(text);
+        URL fileurl = LanguageSelectionForm.class.getResource("/selfcheckoutsystem/images/" + filename);
+        if( fileurl != null )
+            language4Button.setIcon(new javax.swing.ImageIcon(fileurl)); // NOI18N
     }
     
     public int getLanguageNum()
