@@ -47,6 +47,54 @@ public class Language {
             themeIcon = line.replace("Icon=", "");
       }
       
+      //Set ScanCard (Enter Patron ID)
+      //Break out into its own method
+      //[ScanCard]
+      index = iniList.indexOf("[ScanCard]");
+      for( int i = index + 1; i < index + 8; i++ )
+      {
+         line = iniList.get(i);
+         if( line.contains("MessageText=") )
+            scanCardText = line.replace("MessageText=", "");
+         if( line.contains("PictureFile=") )
+            scanCardImage = line.replace("PictureFile=", "");
+         if( line.contains("Sound=") )
+            scanCardSound = line.replace("Sound=", "");
+      }
+      scanCardText = scanCardText.replaceAll("\\{CRLF}", "\\\n");
+      
+      //Set ScanItem 
+      //Break out into its own method
+      //[ScanItem]
+      index = iniList.indexOf("[ScanItem]");
+      for( int i = index + 1; i < index + 8; i++ )
+      {
+         line = iniList.get(i);
+         if( line.contains("MessageText=") )
+            scanItemText = line.replace("MessageText=", "");
+         if( line.contains("PictureFile=") )
+            scanItemImage = line.replace("PictureFile=", "");
+         if( line.contains("Sound=") )
+            scanItemSound = line.replace("Sound=", "");
+      }
+      scanItemText = scanItemText.replaceAll("\\{CRLF}", "\\\n");
+      
+      //Set Take Receipt (Goodbye)
+      //Break out into its own method
+      //[TakeReceipt]
+      index = iniList.indexOf("[TakeReceipt]");
+      for( int i = index + 1; i < index + 6; i++ )
+      {
+         line = iniList.get(i);
+         if( line.contains("MessageText=") )
+            takeReceiptText = line.replace("MessageText=", "");
+         if( line.contains("PictureFile=") )
+            takeReceiptImage = line.replace("PictureFile=", "");
+         if( line.contains("Sound=") )
+            takeReceiptSound = line.replace("Sound=", "");
+      }
+      takeReceiptText = takeReceiptText.replaceAll("\\{CRLF}", "\\\n");
+      
     }
 
     public String name() {
@@ -56,9 +104,60 @@ public class Language {
     public String icon() {
         return themeIcon;
     }
+    
+    public String scanCardText() {
+       return scanCardText;
+    }
+    
+    /* Template function
+    public String () {
+       return ;
+    }
+   */
+    
+    public String scanCardImage() {
+       return scanCardImage;
+    }
+    
+    public String scanCardSound() {
+       return scanCardSound;
+    }
+    
+    public String scanItemText() {
+       return scanItemText;
+    }
 
+    public String scanItemImage() {
+       return scanItemImage;
+    }
+    
+    public String scanItemSound() {
+       return scanItemSound;
+    }    
+    
+    public String takeReceiptText() {
+       return takeReceiptText;
+    }
+
+    public String takeReceiptImage() {
+       return takeReceiptImage;
+    }
+    
+    public String takeReceiptSound() {
+       return takeReceiptSound;
+    }    
+    
     //private String iniName;
     private String themeName = null;
     private String themeIcon = null;
+    private String scanCardText = null;
+    private String scanCardImage = null;
+    private String scanCardSound = null;
+    private String scanItemText = null;
+    private String scanItemImage = null;
+    private String scanItemSound = null;
+    private String takeReceiptText = null;
+    private String takeReceiptImage = null;
+    private String takeReceiptSound = null;
     List<String> iniList = new ArrayList<>(); //The read-in text file
 }

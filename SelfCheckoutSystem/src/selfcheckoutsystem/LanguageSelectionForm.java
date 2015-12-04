@@ -5,9 +5,7 @@
  */
 package selfcheckoutsystem;
 
-import javax.swing.SwingConstants;
 import java.net.URL;
-import java.io.*;
 
 /**
  *
@@ -137,21 +135,23 @@ public class LanguageSelectionForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void language1ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_language1ButtonActionPerformed
-        // TODO add your handling code here:
         languageNum = 1;
         this.setVisible(false);
     }//GEN-LAST:event_language1ButtonActionPerformed
 
     private void language2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_language2ButtonActionPerformed
-        // TODO add your handling code here:
+        languageNum = 2;
+        this.setVisible(false);
     }//GEN-LAST:event_language2ButtonActionPerformed
 
     private void language3ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_language3ButtonActionPerformed
-        // TODO add your handling code here:
+        languageNum = 3;
+        this.setVisible(false);
     }//GEN-LAST:event_language3ButtonActionPerformed
 
     private void language4ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_language4ButtonActionPerformed
-        // TODO add your handling code here:
+        languageNum = 4;
+        this.setVisible(false);
     }//GEN-LAST:event_language4ButtonActionPerformed
 
     /**

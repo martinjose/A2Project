@@ -52,13 +52,14 @@ public class SelfCheckoutSystem
          }
          languageNum = lang.getLanguageNum();
          System.out.println("Using language #" + languageNum);
-         Language chosenLang = new Language(langOptions.get(languageNum));
+         Language chosenLang = new Language(langOptions.get(languageNum-1));
 
          //Load the login screen
          LoginForm login = new LoginForm();
-         login.setBackground("RobotTakeReceipt.jpg");
+         login.setBackground(chosenLang.scanCardImage());
+         login.setText(chosenLang.scanCardText());
          login.setVisible(true);
-         playSound("ZOMBIESCANCARD.WAV");
+         playSound(chosenLang.scanCardSound());
          while (login.isVisible())
          {
             sleep(500);
@@ -70,9 +71,12 @@ public class SelfCheckoutSystem
          //If login info bad, TODO
          //If login info good
          //Load the EnterItem screen
+         //TODO: Should be a while loop
          EnterItemForm item = new EnterItemForm();
-         item.setBackground("RobotTakeReceipt.jpg");
+         item.setBackground(chosenLang.scanItemImage());
+         item.setText(chosenLang.scanItemText());
          item.setVisible(true);
+         playSound(chosenLang.scanItemSound());
          while (item.isVisible())
          {
             sleep(500);
@@ -83,8 +87,10 @@ public class SelfCheckoutSystem
          //If "finished" pushed (or timer runs out)
          //Load goodbye screen
          GoodbyeForm goodbye = new GoodbyeForm();
-         goodbye.setBackground("RobotTakeReceipt.jpg");
+         goodbye.setBackground(chosenLang.takeReceiptImage());
+         goodbye.setText(chosenLang.takeReceiptText());
          goodbye.setVisible(true);
+         playSound(chosenLang.takeReceiptSound());
          sleep(15000);
          goodbye.setVisible(false);
          //Wait
